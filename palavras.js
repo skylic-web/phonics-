@@ -605,28 +605,42 @@ if (grupo) {
 
         if (inicio !== -1) {
 
-            elemento.innerHTML =
-                texto.substring(0, inicio) +
+    word.innerHTML =
+        texto.substring(0, inicio) +
 
-                `<span class="highlight">` +
+        `<span class="sound">` +
 
-                texto.substring(
-                    inicio,
-                    inicio + som.length
-                ) +
+        texto.substring(
+            inicio,
+            inicio + som.length
+        ) +
 
-                `</span>` +
+        `</span>` +
 
-                texto.substring(
-                    inicio + som.length
-                );
+        texto.substring(
+            inicio + som.length
+        );
 
-        } else {
+    const soundWord =
+        word.querySelector(".sound");
 
-            elemento.textContent =
-                texto;
+    if (soundWord) {
 
-        }
+        soundWord.style.cursor = "pointer";
+
+        soundWord.addEventListener(
+            "click",
+            () => ouvirPalavra(item.palavra)
+        );
+
+    }
+
+} else {
+
+    word.textContent =
+        texto;
+
+}
 
 
         if (
