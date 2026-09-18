@@ -667,34 +667,80 @@ if (grupo) {
 // COMEÇAR FLASHCARDS
 // =====================================
 
-if (startButton) {
+if (grupo) {
 
-    startButton.addEventListener(
-        "click",
-        function() {
+    sound.textContent = som;
 
-            soundPage.style.display =
-                "none";
+    soundPronunciation.textContent =
+        "Pronuncia-se " + grupo.pronuncia;
 
-            wordPage.style.display =
-                "flex";
+    grupo.palavras.forEach(item => {
 
-            const indiceInicial =
-                grupo.palavras.findIndex(
-                    item =>
-                        item.palavra.toLowerCase() ===
-                        nomePalavra?.toLowerCase()
+        const elemento =
+            document.createElement("p");
+
+        elemento.className = "all-word";
+
+        elemento.dataset.palavra =
+            item.palavra;
+
+        const texto =
+            item.palavra;
+
+        const inicio =
+            texto
+                .toLowerCase()
+                .indexOf(som.toLowerCase());
+
+        if (inicio !== -1) {
+
+            elemento.innerHTML =
+                texto.substring(0, inicio) +
+
+                `<span class="highlight">` +
+
+                texto.substring(
+                    inicio,
+                    inicio + som.length
+                ) +
+
+                `</span>` +
+
+                texto.substring(
+                    inicio + som.length
                 );
 
-            mostrarPalavra(
-                indiceInicial >= 0
-                    ? indiceInicial
-                    : 0
-            );
-        }
-    );
-}
+        } else {
 
+            elemento.textContent =
+                texto;
+
+        }
+
+        elemento.style.cursor = "pointer";
+
+        elemento.addEventListener(
+            "click",
+            () => ouvirPalavra(item.palavra)
+        );
+
+        if (
+            palavraFavoritada(
+                item.palavra
+            )
+        ) {
+
+            elemento.classList.add(
+                "favorite-word"
+            );
+
+        }
+
+        allWords.appendChild(elemento);
+
+    });
+
+}
 
 // =====================================
 // MOSTRAR PALAVRA
