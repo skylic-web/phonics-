@@ -1,4 +1,5 @@
 const sons = {
+
     oa: {
         pronuncia: "OU",
         palavras: [
@@ -136,11 +137,10 @@ const sons = {
         pronuncia: "EIP",
         palavras: [
             { palavra: "cape", significado: "Substantivo - significa Capa" },
-            { palavra: "gape", significado: "Verbo - significa Ficar Boquiaberto" },
             { palavra: "nape", significado: "Substantivo - significa Nuca" },
             { palavra: "tape", significado: "Substantivo - significa Fita" },
-            { palavra: "drape", significado: "Verbo - significa Cobrir" },
-            { palavra: "shape", significado: "Substantivo - significa Forma" }
+            { palavra: "shape", significado: "Substantivo - significa Forma" },
+            { palavra: "grape", significado: "Substantivo - significa Uva" }
         ]
     },
 
@@ -151,8 +151,322 @@ const sons = {
             { palavra: "hate", significado: "Verbo - significa Odiar" },
             { palavra: "late", significado: "Adjetivo - significa Atrasado" },
             { palavra: "mate", significado: "Substantivo - significa Companheiro" },
-            { palavra: "crater", significado: "Substantivo - significa Cratera" },
-            { palavra: "plate", significado: "Substantivo - significa Prato" }
+            { palavra: "plate", significado: "Substantivo - significa Prato" },
+            { palavra: "crater", significado: "Substantivo - significa Cratera" }
+        ]
+    },
+
+    est: {
+        pronuncia: "EST",
+        palavras: [
+            { palavra: "best", significado: "Adjetivo - significa Melhor" },
+            { palavra: "nest", significado: "Substantivo - significa Ninho" },
+            { palavra: "pest", significado: "Substantivo - significa Praga" },
+            { palavra: "test", significado: "Substantivo - significa Teste" },
+            { palavra: "biggest", significado: "Adjetivo - significa Maior" }
+        ]
+    },
+
+    er: {
+        pronuncia: "ER",
+        palavras: [
+            { palavra: "fern", significado: "Substantivo - significa Samambaia" },
+            { palavra: "germ", significado: "Substantivo - significa Germe" },
+            { palavra: "perk", significado: "Substantivo - significa Benefício" },
+            { palavra: "singer", significado: "Substantivo - significa Cantor" },
+            { palavra: "hotter", significado: "Adjetivo - significa Mais quente" },
+            { palavra: "quicker", significado: "Adjetivo - significa Mais rápido" }
+        ]
+    },
+
+    at: {
+        pronuncia: "ÉT",
+        palavras: [
+            { palavra: "bat", significado: "Substantivo - significa Morcego" },
+            { palavra: "cat", significado: "Substantivo - significa Gato" },
+            { palavra: "hat", significado: "Substantivo - significa Chapéu" },
+            { palavra: "chat", significado: "Substantivo - significa Conversa" },
+            { palavra: "flat", significado: "Adjetivo - significa Plano" }
+        ]
+    },
+
+    ane: {
+        pronuncia: "EIN",
+        palavras: [
+            { palavra: "cane", significado: "Substantivo - significa Bengala" },
+            { palavra: "lane", significado: "Substantivo - significa Faixa" },
+            { palavra: "mane", significado: "Substantivo - significa Juba" },
+            { palavra: "pane", significado: "Substantivo - significa Vidraça" },
+            { palavra: "plane", significado: "Substantivo - significa Avião" }
+        ]
+    },
+
+    th: {
+        pronuncia: "TH",
+        palavras: [
+            { palavra: "thick", significado: "Adjetivo - significa Grosso" },
+            { palavra: "thin", significado: "Adjetivo - significa Fino" },
+            { palavra: "think", significado: "Verbo - significa Pensar" },
+            { palavra: "bath", significado: "Substantivo - significa Banho" },
+            { palavra: "path", significado: "Substantivo - significa Caminho" },
+            { palavra: "math", significado: "Substantivo - significa Matemática" }
+        ]
+    },
+
+    ell: {
+        pronuncia: "EL",
+        palavras: [
+            { palavra: "bell", significado: "Substantivo - significa Sino" },
+            { palavra: "fell", significado: "Verbo - significa Caiu" },
+            { palavra: "sell", significado: "Verbo - significa Vender" },
+            { palavra: "tell", significado: "Verbo - significa Contar" },
+            { palavra: "shell", significado: "Substantivo - significa Concha" }
+        ]
+    },
+
+    et: {
+        pronuncia: "ET",
+        palavras: [
+            { palavra: "get", significado: "Verbo - significa Conseguir" },
+            { palavra: "let", significado: "Verbo - significa Deixar" },
+            { palavra: "met", significado: "Verbo - significa Encontrou" },
+            { palavra: "wet", significado: "Adjetivo - significa Molhado" },
+            { palavra: "yet", significado: "Advérbio - significa Ainda" }
+        ]
+    },
+
+    ite: {
+        pronuncia: "AIT",
+        palavras: [
+            { palavra: "write", significado: "Verbo - significa Escrever" },
+            { palavra: "bite", significado: "Verbo - significa Morder" },
+            { palavra: "kite", significado: "Substantivo - significa Pipa" },
+            { palavra: "quite", significado: "Advérbio - significa Bastante" },
+            { palavra: "polite", significado: "Adjetivo - significa Educado" }
+        ]
+    },
+
+    cl: {
+        pronuncia: "CL",
+        palavras: [
+            { palavra: "clap", significado: "Verbo - significa Bater palmas" },
+            { palavra: "clay", significado: "Substantivo - significa Argila" },
+            { palavra: "cliff", significado: "Substantivo - significa Penhasco" },
+            { palavra: "cloud", significado: "Substantivo - significa Nuvem" },
+            { palavra: "clown", significado: "Substantivo - significa Palhaço" },
+            { palavra: "uncle", significado: "Substantivo - significa Tio" }
+        ]
+    },
+
+    ight: {
+        pronuncia: "AIT",
+        palavras: [
+            { palavra: "light", significado: "Substantivo - significa Luz" },
+            { palavra: "night", significado: "Substantivo - significa Noite" },
+            { palavra: "right", significado: "Adjetivo - significa Certo" },
+            { palavra: "flight", significado: "Substantivo - significa Voo" },
+            { palavra: "might", significado: "Verbo - significa Poderia" },
+            { palavra: "sight", significado: "Substantivo - significa Visão" }
+        ]
+    },
+
+    cr: {
+        pronuncia: "CR",
+        palavras: [
+            { palavra: "cry", significado: "Verbo - significa Chorar" },
+            { palavra: "crab", significado: "Substantivo - significa Caranguejo" },
+            { palavra: "crib", significado: "Substantivo - significa Berço" },
+            { palavra: "crash", significado: "Verbo - significa Bater" },
+            { palavra: "crowd", significado: "Substantivo - significa Multidão" },
+            { palavra: "across", significado: "Preposição - significa Através" }
+        ]
+    },
+
+    ea: {
+        pronuncia: "I",
+        palavras: [
+            { palavra: "eat", significado: "Verbo - significa Comer" },
+            { palavra: "bean", significado: "Substantivo - significa Feijão" },
+            { palavra: "hear", significado: "Verbo - significa Ouvir" },
+            { palavra: "seat", significado: "Substantivo - significa Assento" },
+            { palavra: "treat", significado: "Substantivo - significa Presente" }
+        ]
+    },
+
+    ee: {
+        pronuncia: "I",
+        palavras: [
+            { palavra: "keep", significado: "Verbo - significa Manter" },
+            { palavra: "green", significado: "Adjetivo - significa Verde" },
+            { palavra: "sheep", significado: "Substantivo - significa Ovelha" },
+            { palavra: "cheerful", significado: "Adjetivo - significa Alegre" },
+            { palavra: "sweep", significado: "Verbo - significa Varrer" }
+        ]
+    },
+
+    an: {
+        pronuncia: "AN",
+        palavras: [
+            { palavra: "and", significado: "Conjunção - significa E" },
+            { palavra: "can", significado: "Verbo - significa Poder" },
+            { palavra: "man", significado: "Substantivo - significa Homem" },
+            { palavra: "pan", significado: "Substantivo - significa Panela" },
+            { palavra: "plan", significado: "Substantivo - significa Plano" },
+            { palavra: "stand", significado: "Verbo - significa Ficar em pé" }
+        ]
+    },
+
+    qui: {
+        pronuncia: "KUI",
+        palavras: [
+            { palavra: "quick", significado: "Adjetivo - significa Rápido" },
+            { palavra: "quill", significado: "Substantivo - significa Pena" },
+            { palavra: "quip", significado: "Substantivo - significa Comentário espirituoso" },
+            { palavra: "quit", significado: "Verbo - significa Parar" },
+            { palavra: "quiz", significado: "Substantivo - significa Questionário" }
+        ]
+    },
+
+    th2: {
+        pronuncia: "TH",
+        palavras: [
+            { palavra: "that", significado: "Pronome - significa Aquilo" },
+            { palavra: "them", significado: "Pronome - significa Eles/Elas" },
+            { palavra: "then", significado: "Advérbio - significa Então" },
+            { palavra: "this", significado: "Pronome - significa Isto" },
+            { palavra: "rather", significado: "Advérbio - significa Preferencialmente" }
+        ]
+    },
+
+    old: {
+        pronuncia: "OULD",
+        palavras: [
+            { palavra: "old", significado: "Adjetivo - significa Velho" },
+            { palavra: "bold", significado: "Adjetivo - significa Ousado" },
+            { palavra: "cold", significado: "Adjetivo - significa Frio" },
+            { palavra: "fold", significado: "Verbo - significa Dobrar" },
+            { palavra: "hold", significado: "Verbo - significa Segurar" },
+            { palavra: "told", significado: "Verbo - significa Contou" }
+        ]
+    },
+
+    oo: {
+        pronuncia: "U",
+        palavras: [
+            { palavra: "door", significado: "Substantivo - significa Porta" },
+            { palavra: "foot", significado: "Substantivo - significa Pé" },
+            { palavra: "wood", significado: "Substantivo - significa Madeira" },
+            { palavra: "wool", significado: "Substantivo - significa Lã" },
+            { palavra: "floor", significado: "Substantivo - significa Chão" }
+        ]
+    },
+
+    oo2: {
+        pronuncia: "U",
+        palavras: [
+            { palavra: "boot", significado: "Substantivo - significa Bota" },
+            { palavra: "fool", significado: "Substantivo - significa Tolo" },
+            { palavra: "root", significado: "Substantivo - significa Raiz" },
+            { palavra: "cool", significado: "Adjetivo - significa Legal" }
+        ]
+    },
+
+    ch: {
+        pronuncia: "TCH",
+        palavras: [
+            { palavra: "chat", significado: "Substantivo - significa Conversa" },
+            { palavra: "chip", significado: "Substantivo - significa Chip" },
+            { palavra: "chin", significado: "Substantivo - significa Queixo" },
+            { palavra: "much", significado: "Adjetivo - significa Muito" }
+        ]
+    },
+
+    ir: {
+        pronuncia: "ER",
+        palavras: [
+            { palavra: "sir", significado: "Substantivo - significa Senhor" },
+            { palavra: "air", significado: "Substantivo - significa Ar" },
+            { palavra: "bird", significado: "Substantivo - significa Pássaro" },
+            { palavra: "girl", significado: "Substantivo - significa Menina" },
+            { palavra: "circle", significado: "Substantivo - significa Círculo" }
+        ]
+    },
+
+    it: {
+        pronuncia: "IT",
+        palavras: [
+            { palavra: "bit", significado: "Verbo - significa Mordeu" },
+            { palavra: "hit", significado: "Verbo - significa Bater" },
+            { palavra: "pit", significado: "Substantivo - significa Cova" },
+            { palavra: "sit", significado: "Verbo - significa Sentar" },
+            { palavra: "quit", significado: "Verbo - significa Parar" }
+        ]
+    },
+
+    sl: {
+        pronuncia: "SL",
+        palavras: [
+            { palavra: "slap", significado: "Verbo - significa Dar um tapa" },
+            { palavra: "slim", significado: "Adjetivo - significa Magro" },
+            { palavra: "slip", significado: "Verbo - significa Escorregar" },
+            { palavra: "slop", significado: "Verbo - significa Derramar" },
+            { palavra: "asleep", significado: "Adjetivo - significa Dormindo" }
+        ]
+    },
+
+    ore: {
+        pronuncia: "OR",
+        palavras: [
+            { palavra: "bore", significado: "Verbo - significa Entediou" },
+            { palavra: "chore", significado: "Substantivo - significa Tarefa doméstica" },
+            { palavra: "more", significado: "Advérbio - significa Mais" },
+            { palavra: "sore", significado: "Adjetivo - significa Dolorido" },
+            { palavra: "tore", significado: "Verbo - significa Rasgou" }
+        ]
+    },
+
+    ot: {
+        pronuncia: "OT",
+        palavras: [
+            { palavra: "got", significado: "Verbo - significa Conseguiu" },
+            { palavra: "hot", significado: "Adjetivo - significa Quente" },
+            { palavra: "lot", significado: "Substantivo - significa Lote" },
+            { palavra: "not", significado: "Advérbio - significa Não" },
+            { palavra: "shot", significado: "Substantivo - significa Tiro" }
+        ]
+    },
+
+    y: {
+        pronuncia: "AI",
+        palavras: [
+            { palavra: "by", significado: "Preposição - significa Por" },
+            { palavra: "my", significado: "Pronome - significa Meu/Minha" },
+            { palavra: "dry", significado: "Adjetivo - significa Seco" },
+            { palavra: "fry", significado: "Verbo - significa Fritar" },
+            { palavra: "shy", significado: "Adjetivo - significa Tímido" },
+            { palavra: "try", significado: "Verbo - significa Tentar" }
+        ]
+    },
+
+    ute: {
+        pronuncia: "IUT",
+        palavras: [
+            { palavra: "cute", significado: "Adjetivo - significa Fofo" },
+            { palavra: "mute", significado: "Adjetivo - significa Mudo" },
+            { palavra: "flute", significado: "Substantivo - significa Flauta" },
+            { palavra: "brute", significado: "Substantivo - significa Bruto" }
+        ]
+    },
+
+    str: {
+        pronuncia: "STR",
+        palavras: [
+            { palavra: "strap", significado: "Substantivo - significa Alça" },
+            { palavra: "straw", significado: "Substantivo - significa Canudo" },
+            { palavra: "stray", significado: "Verbo - significa Desviar-se" },
+            { palavra: "strip", significado: "Verbo - significa Tirar" },
+            { palavra: "string", significado: "Substantivo - significa Corda" },
+            { palavra: "strong", significado: "Adjetivo - significa Forte" }
         ]
     }
 };
@@ -162,9 +476,12 @@ const sons = {
 // PARÂMETROS
 // =====================================
 
-const parametros = new URLSearchParams(window.location.search);
+const parametros = new URLSearchParams(
+    window.location.search
+);
 
 const som = parametros.get("som");
+
 const nomePalavra = parametros.get("palavra");
 
 const grupo = sons[som];
@@ -178,20 +495,31 @@ const soundPage = document.getElementById("soundPage");
 const wordPage = document.getElementById("wordPage");
 
 const sound = document.getElementById("sound");
-const soundPronunciation = document.getElementById("soundPronunciation");
-const allWords = document.getElementById("allWords");
+const soundPronunciation =
+    document.getElementById("soundPronunciation");
 
-const startButton = document.getElementById("startButton");
+const allWords =
+    document.getElementById("allWords");
 
-const soundStar = document.getElementById("soundStar");
-const wordStar = document.getElementById("wordStar");
+const startButton =
+    document.getElementById("startButton");
 
 const word = document.getElementById("word");
 const meaning = document.getElementById("meaning");
-const pronunciation = document.getElementById("pronunciation");
+const pronunciation =
+    document.getElementById("pronunciation");
 
-const previous = document.getElementById("previous");
-const next = document.getElementById("next");
+const previous =
+    document.getElementById("previous");
+
+const next =
+    document.getElementById("next");
+
+const soundStar =
+    document.getElementById("soundStar");
+
+const wordStar =
+    document.getElementById("wordStar");
 
 
 // =====================================
@@ -199,6 +527,7 @@ const next = document.getElementById("next");
 // =====================================
 
 function palavraFavoritada(nome) {
+
     return localStorage.getItem(
         "favorita-" + nome.toLowerCase()
     ) === "true";
@@ -207,9 +536,11 @@ function palavraFavoritada(nome) {
 
 function mudarFavorito(nome) {
 
-    const chave = "favorita-" + nome.toLowerCase();
+    const chave =
+        "favorita-" + nome.toLowerCase();
 
-    const atual = palavraFavoritada(nome);
+    const atual =
+        palavraFavoritada(nome);
 
     localStorage.setItem(
         chave,
@@ -219,55 +550,32 @@ function mudarFavorito(nome) {
 
 
 // =====================================
-// ATUALIZA AS PALAVRAS DA PÁGINA INICIAL
+// ATUALIZA PALAVRAS DA PÁGINA INICIAL
 // =====================================
 
 function atualizarPalavrasFavoritas() {
 
-    const palavras =
-        document.querySelectorAll(".all-word");
+    document
+        .querySelectorAll(".all-word")
+        .forEach(elemento => {
 
-    palavras.forEach(elemento => {
+            const nome =
+                elemento.dataset.palavra;
 
-        const nome =
-            elemento.dataset.palavra;
-
-        if (palavraFavoritada(nome)) {
-
-            elemento.classList.add(
-                "favorite-word"
+            elemento.classList.toggle(
+                "favorite-word",
+                palavraFavoritada(nome)
             );
 
-        } else {
-
-            elemento.classList.remove(
-                "favorite-word"
-            );
-        }
-    });
+        });
 }
 
 
 // =====================================
-// ATUALIZA A ESTRELA
+// MOSTRAR PALAVRAS
 // =====================================
 
-function atualizarEstrela(estrela, nome) {
-
-    if (!estrela) return;
-
-    estrela.classList.toggle(
-        "active",
-        palavraFavoritada(nome)
-    );
-}
-
-
-// =====================================
-// PÁGINA INICIAL DO SOM
-// =====================================
-
-if (grupo && soundPage) {
+if (grupo) {
 
     sound.textContent = som;
 
@@ -282,28 +590,23 @@ if (grupo && soundPage) {
 
         elemento.className = "all-word";
 
-        // Guarda o nome da palavra
         elemento.dataset.palavra =
             item.palavra;
 
 
-        const texto = item.palavra;
+        const texto =
+            item.palavra;
 
         const inicio =
             texto
                 .toLowerCase()
-                .indexOf(
-                    som.toLowerCase()
-                );
+                .indexOf(som.toLowerCase());
 
 
         if (inicio !== -1) {
 
             elemento.innerHTML =
-                texto.substring(
-                    0,
-                    inicio
-                ) +
+                texto.substring(0, inicio) +
 
                 `<span class="highlight">` +
 
@@ -322,11 +625,10 @@ if (grupo && soundPage) {
 
             elemento.textContent =
                 texto;
+
         }
 
 
-        // Se já estiver favoritada,
-        // começa amarela
         if (
             palavraFavoritada(
                 item.palavra
@@ -336,66 +638,19 @@ if (grupo && soundPage) {
             elemento.classList.add(
                 "favorite-word"
             );
+
         }
 
 
-        allWords.appendChild(
-            elemento
-        );
+        allWords.appendChild(elemento);
 
     });
 
-
-    atualizarPalavrasFavoritas();
 }
 
 
 // =====================================
-// ESTRELA DA PÁGINA INICIAL
-// =====================================
-
-if (soundStar && grupo) {
-
-    // A estrela da página inicial
-    // representa a primeira palavra
-    const primeiraPalavra =
-        grupo.palavras[0].palavra;
-
-
-    atualizarEstrela(
-        soundStar,
-        primeiraPalavra
-    );
-
-
-    soundStar.addEventListener(
-        "click",
-        function(event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-
-            mudarFavorito(
-                primeiraPalavra
-            );
-
-
-            atualizarEstrela(
-                soundStar,
-                primeiraPalavra
-            );
-
-
-            atualizarPalavrasFavoritas();
-
-        }
-    );
-}
-
-
-// =====================================
-// COMEÇAR AS PALAVRAS
+// COMEÇAR FLASHCARDS
 // =====================================
 
 if (startButton) {
@@ -410,8 +665,18 @@ if (startButton) {
             wordPage.style.display =
                 "flex";
 
-            mostrarPalavra(0);
+            const indiceInicial =
+                grupo.palavras.findIndex(
+                    item =>
+                        item.palavra.toLowerCase() ===
+                        nomePalavra?.toLowerCase()
+                );
 
+            mostrarPalavra(
+                indiceInicial >= 0
+                    ? indiceInicial
+                    : 0
+            );
         }
     );
 }
@@ -421,15 +686,19 @@ if (startButton) {
 // MOSTRAR PALAVRA
 // =====================================
 
+let indiceAtual = 0;
+
+
 function mostrarPalavra(indice) {
 
     if (!grupo) return;
-
 
     const item =
         grupo.palavras[indice];
 
     if (!item) return;
+
+    indiceAtual = indice;
 
 
     const texto =
@@ -444,18 +713,10 @@ function mostrarPalavra(indice) {
             );
 
 
-    // =====================================
-    // PALAVRA
-    // =====================================
-
     if (inicio !== -1) {
 
         word.innerHTML =
-
-            texto.substring(
-                0,
-                inicio
-            ) +
+            texto.substring(0, inicio) +
 
             `<span class="sound">` +
 
@@ -478,57 +739,53 @@ function mostrarPalavra(indice) {
     }
 
 
-    // =====================================
-    // SIGNIFICADO
-    // =====================================
-
     meaning.textContent =
         item.significado;
 
 
-    // =====================================
-    // PRONÚNCIA
-    // =====================================
-
     pronunciation.innerHTML =
-        `Pronuncia-se ${grupo.pronuncia} - <span class="listen">OUVIR</span>`;
+        `Pronuncia-se ${grupo.pronuncia} - ` +
+        `<span class="listen" id="listenButton">OUVIR</span>`;
 
 
-    // =====================================
-    // ESTRELA DA PALAVRA
-    // =====================================
+    const listenButton =
+        document.getElementById(
+            "listenButton"
+        );
+
+
+    if (listenButton) {
+
+        listenButton.style.cursor =
+            "pointer";
+
+        listenButton.onclick =
+            () => ouvirPalavra(
+                item.palavra
+            );
+    }
+
 
     atualizarEstrela(
-        wordStar,
         item.palavra
     );
 
 
-    // =====================================
-    // SETA ESQUERDA
-    // =====================================
+    // VOLTAR
 
     previous.disabled = false;
-
 
     if (indice > 0) {
 
         previous.onclick =
-            function() {
-
-                mostrarPalavra(
-                    indice - 1
-                );
-
-            };
+            () => mostrarPalavra(
+                indice - 1
+            );
 
     } else {
 
-        // Na primeira palavra,
-        // volta para o card inicial
-
         previous.onclick =
-            function() {
+            () => {
 
                 wordPage.style.display =
                     "none";
@@ -536,20 +793,11 @@ function mostrarPalavra(indice) {
                 soundPage.style.display =
                     "flex";
 
-                atualizarPalavrasFavoritas();
-
-                atualizarEstrela(
-                    soundStar,
-                    grupo.palavras[0].palavra
-                );
-
             };
     }
 
 
-    // =====================================
-    // SETA DIREITA
-    // =====================================
+    // AVANÇAR
 
     if (
         indice <
@@ -559,27 +807,60 @@ function mostrarPalavra(indice) {
         next.disabled = false;
 
         next.onclick =
-            function() {
-
-                mostrarPalavra(
-                    indice + 1
-                );
-
-            };
+            () => mostrarPalavra(
+                indice + 1
+            );
 
     } else {
 
         next.disabled = true;
 
         next.onclick = null;
-
     }
 }
 
 
 // =====================================
-// ESTRELA DA PÁGINA INDIVIDUAL
+// ESTRELA
 // =====================================
+
+function atualizarEstrela(nome) {
+
+    const favorita =
+        palavraFavoritada(nome);
+
+
+    if (wordStar) {
+
+        wordStar.classList.toggle(
+            "active",
+            favorita
+        );
+    }
+
+
+    if (soundStar) {
+
+        const algumaFavorita =
+            grupo.palavras.some(
+                item =>
+                    palavraFavoritada(
+                        item.palavra
+                    )
+            );
+
+        soundStar.classList.toggle(
+            "active",
+            algumaFavorita
+        );
+    }
+
+
+    atualizarPalavrasFavoritas();
+}
+
+
+// ESTRELA DA PALAVRA
 
 if (wordStar) {
 
@@ -591,58 +872,109 @@ if (wordStar) {
             event.stopPropagation();
 
 
-            const palavraAtual =
-                word.textContent
-                    .trim();
+            const item =
+                grupo.palavras[indiceAtual];
 
 
-            if (!palavraAtual) return;
+            if (!item) return;
 
 
             mudarFavorito(
-                palavraAtual
+                item.palavra
             );
 
 
             atualizarEstrela(
-                wordStar,
-                palavraAtual
+                item.palavra
+            );
+        }
+    );
+}
+
+
+// ESTRELA DA PÁGINA INICIAL
+
+if (soundStar) {
+
+    soundStar.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            const algumaFavorita =
+                grupo.palavras.some(
+                    item =>
+                        palavraFavoritada(
+                            item.palavra
+                        )
+                );
+
+
+            grupo.palavras.forEach(
+                item => {
+
+                    localStorage.setItem(
+                        "favorita-" +
+                        item.palavra.toLowerCase(),
+
+                        (!algumaFavorita).toString()
+                    );
+
+                }
             );
 
 
-            atualizarPalavrasFavoritas();
-
+            atualizarEstrela(
+                grupo.palavras[indiceAtual]?.palavra
+            );
         }
     );
 }
 
 
 // =====================================
-// ABRIR DIRETAMENTE UMA PALAVRA
+// OUVIR PALAVRA EM INGLÊS
 // =====================================
 
-if (
-    grupo &&
-    nomePalavra
-) {
+let audioAtual = null;
 
-    const indice =
-        grupo.palavras.findIndex(
-            item =>
-                item.palavra.toLowerCase() ===
-                nomePalavra.toLowerCase()
-        );
+function ouvirPalavra(texto) {
+    const palavra = texto;
+    const nomeArquivo = palavra.toLowerCase() + ".mp3";
 
-
-    if (indice !== -1) {
-
-        soundPage.style.display =
-            "none";
-
-        wordPage.style.display =
-            "flex";
-
-        mostrarPalavra(indice);
-
+    if (audioAtual) {
+        audioAtual.pause();
+        audioAtual.currentTime = 0;
     }
+
+    audioAtual = new Audio(
+        "audio/" + nomeArquivo
+    );
+
+    audioAtual.play().catch(() => {
+        mostrarErroAudio(palavra);
+    });
+}
+
+function mostrarErroAudio(palavra) {
+    const aviso = document.createElement("div");
+
+    aviso.className = "audio-error";
+    aviso.innerHTML = `
+        <strong>Ops!</strong>
+        <span>Não foi possível reproduzir o áudio de ${palavra}.</span>
+    `;
+
+    document.body.appendChild(aviso);
+
+    setTimeout(() => {
+        aviso.classList.add("sumindo");
+
+        setTimeout(() => {
+            aviso.remove();
+        }, 400);
+    }, 5000);
 }

@@ -429,3 +429,73 @@ font-size: 40px;
 }
 
 }
+
+.audio-error {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 300px;
+    padding: 18px 20px;
+
+    background: #fff;
+    color: #344026;
+
+    border: 2px solid #718760;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(52, 64, 38, 0.18);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: "Kanchenjunga", sans-serif;
+
+    z-index: 9999;
+
+    animation: aparecerAudio 0.4s ease;
+}
+
+.audio-error strong {
+    font-family: "Fredoka One", sans-serif;
+    font-size: 20px;
+}
+
+.audio-error span {
+    font-size: 15px;
+}
+
+.audio-error.sumindo {
+    animation: sumirAudio 0.4s ease forwards;
+}
+
+@keyframes aparecerAudio {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sumirAudio {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+@media (max-width: 600px) {
+
+.audio-error {
+width: 235px;
+}
+}
