@@ -353,21 +353,13 @@ const sons = {
     oo: {
         pronuncia: "U",
         palavras: [
-            { palavra: "door", significado: "Substantivo - significa Porta" },
+            { palavra: "boot", significado: "Substantivo - significa Bota" },
             { palavra: "foot", significado: "Substantivo - significa Pé" },
             { palavra: "wood", significado: "Substantivo - significa Madeira" },
             { palavra: "wool", significado: "Substantivo - significa Lã" },
-            { palavra: "floor", significado: "Substantivo - significa Chão" }
-        ]
-    },
-
-    oo2: {
-        pronuncia: "U",
-        palavras: [
-            { palavra: "boot", significado: "Substantivo - significa Bota" },
-            { palavra: "fool", significado: "Substantivo - significa Tolo" },
+            { palavra: "cool", significado: "Adjetivo - significa Legal" },
             { palavra: "root", significado: "Substantivo - significa Raiz" },
-            { palavra: "cool", significado: "Adjetivo - significa Legal" }
+            { palavra: "fool", significado: "Substantivo - significa Tolo" }
         ]
     },
 
