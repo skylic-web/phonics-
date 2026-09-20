@@ -60,9 +60,7 @@ const palavrasPorSom = {
 
     old: ["old", "bold", "cold", "fold", "hold", "told"],
 
-    oo: ["door", "foot", "wood", "wool", "floor"],
-
-    oo2: ["boot", "fool", "root", "cool"],
+    oo: ["boot", "foot", "wood", "wool", "cool", "root", "fool"],
 
     ch: ["chat", "chip", "chin", "much"],
 
