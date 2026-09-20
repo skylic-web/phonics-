@@ -569,10 +569,7 @@ function destacarPalavra(texto) {
 
     return (
         texto.substring(0, inicio) +
-        `<span class="highlight">${texto.substring(
-            inicio,
-            inicio + som.length
-        )}</span>` +
+        `<span class="sound">${texto.substring(inicio, inicio + som.length)}</span>` +
         texto.substring(inicio + som.length)
     );
 }
