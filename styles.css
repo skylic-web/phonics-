@@ -12,9 +12,7 @@ body {
 body {
     background-color: #B3C79B;
     font-family: "Kanchenjunga", sans-serif;
-
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
 }

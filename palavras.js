@@ -471,551 +471,58 @@ const sons = {
     }
 };
 
-
-// =====================================
-// PARÂMETROS
-// =====================================
-
-const parametros = new URLSearchParams(
-    window.location.search
-);
+const parametros = new URLSearchParams(window.location.search);
 
 const som = parametros.get("som");
-
 const nomePalavra = parametros.get("palavra");
 
 const grupo = sons[som];
-
-
-// =====================================
-// ELEMENTOS
-// =====================================
 
 const soundPage = document.getElementById("soundPage");
 const wordPage = document.getElementById("wordPage");
 
 const sound = document.getElementById("sound");
-const soundPronunciation =
-    document.getElementById("soundPronunciation");
+const soundPronunciation = document.getElementById("soundPronunciation");
 
-const allWords =
-    document.getElementById("allWords");
-
-const startButton =
-    document.getElementById("startButton");
+const allWords = document.getElementById("allWords");
+const startButton = document.getElementById("startButton");
 
 const word = document.getElementById("word");
 const meaning = document.getElementById("meaning");
-const pronunciation =
-    document.getElementById("pronunciation");
+const pronunciation = document.getElementById("pronunciation");
 
-const previous =
-    document.getElementById("previous");
+const previous = document.getElementById("previous");
+const next = document.getElementById("next");
 
-const next =
-    document.getElementById("next");
-
-const soundStar =
-    document.getElementById("soundStar");
-
-const wordStar =
-    document.getElementById("wordStar");
-
-
-// =====================================
-// FAVORITOS
-// =====================================
-
-function palavraFavoritada(nome) {
-
-    return localStorage.getItem(
-        "favorita-" + nome.toLowerCase()
-    ) === "true";
-}
-
-
-function mudarFavorito(nome) {
-
-    const chave =
-        "favorita-" + nome.toLowerCase();
-
-    const atual =
-        palavraFavoritada(nome);
-
-    localStorage.setItem(
-        chave,
-        (!atual).toString()
-    );
-}
-
-
-// =====================================
-// ATUALIZA PALAVRAS DA PÁGINA INICIAL
-// =====================================
-
-function atualizarPalavrasFavoritas() {
-
-    document
-        .querySelectorAll(".all-word")
-        .forEach(elemento => {
-
-            const nome =
-                elemento.dataset.palavra;
-
-            elemento.classList.toggle(
-                "favorite-word",
-                palavraFavoritada(nome)
-            );
-
-        });
-}
-
-
-// =====================================
-// MOSTRAR PALAVRAS
-// =====================================
-
-if (grupo) {
-
-    sound.textContent = som;
-
-    soundPronunciation.textContent =
-        "Pronuncia-se " + grupo.pronuncia;
-
-
-    grupo.palavras.forEach(item => {
-
-        const elemento =
-            document.createElement("p");
-
-        elemento.className = "all-word";
-
-        elemento.dataset.palavra =
-            item.palavra;
-
-
-        const texto =
-            item.palavra;
-
-        const inicio =
-            texto
-                .toLowerCase()
-                .indexOf(som.toLowerCase());
-
-
-        if (inicio !== -1) {
-
-    word.innerHTML =
-        texto.substring(0, inicio) +
-
-        `<span class="sound">` +
-
-        texto.substring(
-            inicio,
-            inicio + som.length
-        ) +
-
-        `</span>` +
-
-        texto.substring(
-            inicio + som.length
-        );
-
-    const soundWord =
-        word.querySelector(".sound");
-
-    if (soundWord) {
-
-        soundWord.style.cursor = "pointer";
-
-        soundWord.addEventListener(
-            "click",
-            () => ouvirPalavra(item.palavra)
-        );
-
-    }
-
-} else {
-
-    word.textContent =
-        texto;
-
-}
-
-
-        if (
-            palavraFavoritada(
-                item.palavra
-            )
-        ) {
-
-            elemento.classList.add(
-                "favorite-word"
-            );
-
-        }
-
-
-        allWords.appendChild(elemento);
-
-    });
-
-}
-
-
-// =====================================
-// COMEÇAR FLASHCARDS
-// =====================================
-
-if (grupo) {
-
-    sound.textContent = som;
-
-    soundPronunciation.textContent =
-        "Pronuncia-se " + grupo.pronuncia;
-
-    grupo.palavras.forEach(item => {
-
-        const elemento =
-            document.createElement("p");
-
-        elemento.className = "all-word";
-
-        elemento.dataset.palavra =
-            item.palavra;
-
-        const texto =
-            item.palavra;
-
-        const inicio =
-            texto
-                .toLowerCase()
-                .indexOf(som.toLowerCase());
-
-        if (inicio !== -1) {
-
-            elemento.innerHTML =
-                texto.substring(0, inicio) +
-
-                `<span class="highlight">` +
-
-                texto.substring(
-                    inicio,
-                    inicio + som.length
-                ) +
-
-                `</span>` +
-
-                texto.substring(
-                    inicio + som.length
-                );
-
-        } else {
-
-            elemento.textContent =
-                texto;
-
-        }
-
-        elemento.style.cursor = "pointer";
-
-        elemento.addEventListener(
-            "click",
-            () => ouvirPalavra(item.palavra)
-        );
-
-        if (
-            palavraFavoritada(
-                item.palavra
-            )
-        ) {
-
-            elemento.classList.add(
-                "favorite-word"
-            );
-
-        }
-
-        allWords.appendChild(elemento);
-
-    });
-
-}
-
-// =====================================
-// MOSTRAR PALAVRA
-// =====================================
+const soundStar = document.getElementById("soundStar");
+const wordStar = document.getElementById("wordStar");
 
 let indiceAtual = 0;
-
-
-function mostrarPalavra(indice) {
-
-    if (!grupo) return;
-
-    const item =
-        grupo.palavras[indice];
-
-    if (!item) return;
-
-    indiceAtual = indice;
-
-
-    const texto =
-        item.palavra;
-
-
-    const inicio =
-        texto
-            .toLowerCase()
-            .indexOf(
-                som.toLowerCase()
-            );
-
-
-    if (inicio !== -1) {
-
-        word.innerHTML =
-            texto.substring(0, inicio) +
-
-            `<span class="sound">` +
-
-            texto.substring(
-                inicio,
-                inicio + som.length
-            ) +
-
-            `</span>` +
-
-            texto.substring(
-                inicio + som.length
-            );
-
-    } else {
-
-        word.textContent =
-            texto;
-
-    }
-
-
-    meaning.textContent =
-        item.significado;
-
-
-    pronunciation.innerHTML =
-        `Pronuncia-se ${grupo.pronuncia} - ` +
-        `<span class="listen" id="listenButton">OUVIR</span>`;
-
-
-    const listenButton =
-        document.getElementById(
-            "listenButton"
-        );
-
-
-    if (listenButton) {
-
-        listenButton.style.cursor =
-            "pointer";
-
-        listenButton.onclick =
-            () => ouvirPalavra(
-                item.palavra
-            );
-    }
-
-
-    atualizarEstrela(
-        item.palavra
-    );
-
-
-    // VOLTAR
-
-    previous.disabled = false;
-
-    if (indice > 0) {
-
-        previous.onclick =
-            () => mostrarPalavra(
-                indice - 1
-            );
-
-    } else {
-
-        previous.onclick =
-            () => {
-
-                wordPage.style.display =
-                    "none";
-
-                soundPage.style.display =
-                    "flex";
-
-            };
-    }
-
-
-    // AVANÇAR
-
-    if (
-        indice <
-        grupo.palavras.length - 1
-    ) {
-
-        next.disabled = false;
-
-        next.onclick =
-            () => mostrarPalavra(
-                indice + 1
-            );
-
-    } else {
-
-        next.disabled = true;
-
-        next.onclick = null;
-    }
-}
-
-
-// =====================================
-// ESTRELA
-// =====================================
-
-function atualizarEstrela(nome) {
-
-    const favorita =
-        palavraFavoritada(nome);
-
-
-    if (wordStar) {
-
-        wordStar.classList.toggle(
-            "active",
-            favorita
-        );
-    }
-
-
-    if (soundStar) {
-
-        const algumaFavorita =
-            grupo.palavras.some(
-                item =>
-                    palavraFavoritada(
-                        item.palavra
-                    )
-            );
-
-        soundStar.classList.toggle(
-            "active",
-            algumaFavorita
-        );
-    }
-
-
-    atualizarPalavrasFavoritas();
-}
-
-
-// ESTRELA DA PALAVRA
-
-if (wordStar) {
-
-    wordStar.addEventListener(
-        "click",
-        function(event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-
-            const item =
-                grupo.palavras[indiceAtual];
-
-
-            if (!item) return;
-
-
-            mudarFavorito(
-                item.palavra
-            );
-
-
-            atualizarEstrela(
-                item.palavra
-            );
-        }
-    );
-}
-
-
-// ESTRELA DA PÁGINA INICIAL
-
-if (soundStar) {
-
-    soundStar.addEventListener(
-        "click",
-        function(event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-
-            const algumaFavorita =
-                grupo.palavras.some(
-                    item =>
-                        palavraFavoritada(
-                            item.palavra
-                        )
-                );
-
-
-            grupo.palavras.forEach(
-                item => {
-
-                    localStorage.setItem(
-                        "favorita-" +
-                        item.palavra.toLowerCase(),
-
-                        (!algumaFavorita).toString()
-                    );
-
-                }
-            );
-
-
-            atualizarEstrela(
-                grupo.palavras[indiceAtual]?.palavra
-            );
-        }
-    );
-}
-
-
-// =====================================
-// OUVIR PALAVRA EM INGLÊS
-// =====================================
-
 let audioAtual = null;
 
+function palavraFavoritada(nome) {
+    return localStorage.getItem("favorita-" + nome.toLowerCase()) === "true";
+}
+
+function mudarFavorito(nome) {
+    const chave = "favorita-" + nome.toLowerCase();
+    const atual = palavraFavoritada(nome);
+
+    localStorage.setItem(chave, (!atual).toString());
+}
+
 function ouvirPalavra(texto) {
-    const palavra = texto;
-    const nomeArquivo = palavra.toLowerCase() + ".mp3";
+    const nomeArquivo = texto.toLowerCase() + ".mp3";
 
     if (audioAtual) {
         audioAtual.pause();
         audioAtual.currentTime = 0;
     }
 
-    audioAtual = new Audio(
-        "audio/" + nomeArquivo
-    );
+    audioAtual = new Audio("audio/" + nomeArquivo);
 
     audioAtual.play().catch(() => {
-        mostrarErroAudio(palavra);
+        mostrarErroAudio(texto);
     });
 }
 
@@ -1023,6 +530,7 @@ function mostrarErroAudio(palavra) {
     const aviso = document.createElement("div");
 
     aviso.className = "audio-error";
+
     aviso.innerHTML = `
         <strong>Ops!</strong>
         <span>Não foi possível reproduzir o áudio de ${palavra}.</span>
@@ -1037,4 +545,219 @@ function mostrarErroAudio(palavra) {
             aviso.remove();
         }, 400);
     }, 5000);
+}
+
+function atualizarPalavrasFavoritas() {
+    document.querySelectorAll(".all-word").forEach(elemento => {
+        const nome = elemento.dataset.palavra;
+
+        elemento.classList.toggle(
+            "favorite-word",
+            palavraFavoritada(nome)
+        );
+    });
+}
+
+function destacarPalavra(texto) {
+    if (!som) return texto;
+
+    const inicio = texto.toLowerCase().indexOf(som.toLowerCase());
+
+    if (inicio === -1) {
+        return texto;
+    }
+
+    return (
+        texto.substring(0, inicio) +
+        `<span class="sound">${texto.substring(
+            inicio,
+            inicio + som.length
+        )}</span>` +
+        texto.substring(inicio + som.length)
+    );
+}
+
+function criarPaginaInicial() {
+    if (!grupo || !allWords) return;
+
+    sound.textContent = som;
+
+    soundPronunciation.textContent =
+        "Pronuncia-se " + grupo.pronuncia;
+
+    allWords.innerHTML = "";
+
+    grupo.palavras.forEach(item => {
+        const elemento = document.createElement("p");
+
+        elemento.className = "all-word";
+        elemento.dataset.palavra = item.palavra;
+
+        elemento.innerHTML = destacarPalavra(item.palavra);
+
+        elemento.style.cursor = "pointer";
+
+        elemento.addEventListener("click", () => {
+            const indice = grupo.palavras.findIndex(
+                palavra => palavra.palavra === item.palavra
+            );
+
+            mostrarPalavra(indice);
+        });
+
+        if (palavraFavoritada(item.palavra)) {
+            elemento.classList.add("favorite-word");
+        }
+
+        allWords.appendChild(elemento);
+    });
+
+    atualizarPalavrasFavoritas();
+}
+
+function mostrarPalavra(indice) {
+    if (!grupo) return;
+
+    if (indice < 0 || indice >= grupo.palavras.length) {
+        return;
+    }
+
+    const item = grupo.palavras[indice];
+
+    indiceAtual = indice;
+
+    word.innerHTML = destacarPalavra(item.palavra);
+
+    meaning.textContent = item.significado;
+
+    pronunciation.innerHTML =
+        `Pronuncia-se ${grupo.pronuncia} - ` +
+        `<span class="listen" id="listenButton">OUVIR</span>`;
+
+    const somPalavra = word.querySelector(".sound");
+
+    if (somPalavra) {
+        somPalavra.style.cursor = "pointer";
+
+        somPalavra.addEventListener("click", event => {
+            event.stopPropagation();
+            ouvirPalavra(item.palavra);
+        });
+    }
+
+    const listenButton = document.getElementById("listenButton");
+
+    if (listenButton) {
+        listenButton.style.cursor = "pointer";
+
+        listenButton.addEventListener("click", () => {
+            ouvirPalavra(item.palavra);
+        });
+    }
+
+    atualizarEstrela(item.palavra);
+
+    if (indice === 0) {
+        previous.disabled = false;
+
+        previous.onclick = () => {
+            wordPage.style.display = "none";
+            soundPage.style.display = "flex";
+        };
+    } else {
+        previous.disabled = false;
+
+        previous.onclick = () => {
+            mostrarPalavra(indice - 1);
+        };
+    }
+
+    if (indice < grupo.palavras.length - 1) {
+        next.disabled = false;
+
+        next.onclick = () => {
+            mostrarPalavra(indice + 1);
+        };
+    } else {
+        next.disabled = true;
+        next.onclick = null;
+    }
+
+    soundPage.style.display = "none";
+    wordPage.style.display = "flex";
+}
+
+function atualizarEstrela(nome) {
+    const favorita = palavraFavoritada(nome);
+
+    if (wordStar) {
+        wordStar.classList.toggle("active", favorita);
+    }
+
+    if (soundStar) {
+        const algumaFavorita = grupo.palavras.some(item =>
+            palavraFavoritada(item.palavra)
+        );
+
+        soundStar.classList.toggle("active", algumaFavorita);
+    }
+
+    atualizarPalavrasFavoritas();
+}
+
+if (wordStar) {
+    wordStar.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const item = grupo.palavras[indiceAtual];
+
+        if (!item) return;
+
+        mudarFavorito(item.palavra);
+
+        atualizarEstrela(item.palavra);
+    });
+}
+
+if (soundStar) {
+    soundStar.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const algumaFavorita = grupo.palavras.some(item =>
+            palavraFavoritada(item.palavra)
+        );
+
+        grupo.palavras.forEach(item => {
+            localStorage.setItem(
+                "favorita-" + item.palavra.toLowerCase(),
+                (!algumaFavorita).toString()
+            );
+        });
+
+        atualizarEstrela(
+            grupo.palavras[indiceAtual]?.palavra
+        );
+    });
+}
+
+if (startButton) {
+    startButton.addEventListener("click", () => {
+        mostrarPalavra(0);
+    });
+}
+
+if (grupo) {
+    criarPaginaInicial();
+
+    if (nomePalavra) {
+        const indice = grupo.palavras.findIndex(
+            item => item.palavra.toLowerCase() === nomePalavra.toLowerCase()
+        );
+
+        if (indice !== -1) {
+            mostrarPalavra(indice);
+        }
+    }
 }
