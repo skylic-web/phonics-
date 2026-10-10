@@ -454,10 +454,10 @@ const sons = {
         pronuncia: "STR",
         palavras: [
             { palavra: "strap", significado: "Substantivo - significa Alça" },
-            { palavra: "straw", significado: "Substantivo - significa Canudo" },
-            { palavra: "stray", significado: "Verbo - significa Desviar-se" },
             { palavra: "strip", significado: "Verbo - significa Tirar" },
             { palavra: "string", significado: "Substantivo - significa Corda" },
+            { palavra: "straw", significado: "Substantivo - significa Canudo" },
+            { palavra: "stray", significado: "Verbo - significa Desviar-se" },
             { palavra: "strong", significado: "Adjetivo - significa Forte" }
         ]
     }
