@@ -1,26 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-       name="viewport"
-       content="width=device-width, initial-scale=1.0" />
-    <title>Phonics</title>
-    <link rel="stylesheet" href="quiz.css" />
-    <link rel="icon" type="image/png" href="logo.png">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');</style>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phonics - Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Kanchenjunga:wght@400;500;600;700&family=Titan+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="seta" aria-label="Voltar ao início">←</a>
+    <div class="heading">
+      <h1>Quiz</h1>
+      <p>Pratique as palavras que aprendeu!</p>
+    </div>
+    <div class="topbar-right">
+      <div id="scoreBadge" class="score-badge hidden" aria-live="polite">Pontuação: <span id="score">0</span></div>
+      <button id="helpButton" class="help-button" type="button">Como funciona?</button>
+    </div>
+  </header>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Kanchenjunga:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');</style>
-  </head>
+  <main class="container">
+    <section id="startScreen" class="panel">
+      <h2 class="section-heading">Escolha o modo:</h2>
+      <div class="mode-options">
+        <button class="mode-card selected" data-mode="meaning" type="button" aria-pressed="true">
+          <strong>Significado</strong>
+          <span>Descubra a palavra em inglês.</span>
+        </button>
+        <button class="mode-card" data-mode="phonics" type="button" aria-pressed="false">
+          <strong>Phonics</strong>
+          <span>Complete as letras que faltam (modo fonética)</span>
+        </button>
+      </div>
 
-  <body>
+      <h2 class="section-heading count-heading">Quantas palavras?</h2>
+      <div class="count-options">
+        <button class="count-button selected" data-count="5" type="button" aria-pressed="true">5</button>
+        <button class="count-button" data-count="10" type="button" aria-pressed="false">10</button>
+        <button class="count-button" data-count="15" type="button" aria-pressed="false">15</button>
+      </div>
+      <button id="startQuizButton" class="primary-button" type="button">Iniciar Quiz</button>
+    </section>
 
-    <main>
+    <section id="quizScreen" class="panel hidden">
+      <div class="quiz-top"><span id="questionCounter">QUESTÃO 1 DE 5</span></div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      <p id="questionInstruction" class="eyebrow"></p>
+      <h2 id="questionTitle" class="question-title"></h2>
+      <p id="questionMeaning" class="question-meaning"></p>
+      <p id="questionHint" class="question-hint hidden" role="status"></p>
+      <form id="answerForm" autocomplete="off">
+        <label id="answerLabel" for="answerInput">Sua resposta</label>
+        <input id="answerInput" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="Digite aqui..." required>
+        <button id="hintButton" class="secondary-button hint-button" type="button">💡 Ver dica (−5 pontos)</button>
+        <button id="answerButton" class="primary-button" type="submit">Responder</button>
+      </form>
+      <div id="feedback" class="feedback hidden" role="status" aria-live="polite">
+        <strong id="feedbackTitle"></strong>
+        <p id="feedbackText"></p>
+      </div>
+      <button id="nextButton" class="primary-button hidden" type="button">Próxima palavra →</button>
+    </section>
 
-    <h1>Ainda trabalhando!!</h1>
-    <img src="image.png" alt="gatos trabalhando">
-  </body>
+    <section id="resultScreen" class="panel hidden">
+      <p class="eyebrow">QUIZ COMPLETO</p>
+      <h2 id="resultTitle" class="result-title">Você conseguiu!</h2>
+      <p id="finalScore" class="final-score">0 pontos</p>
+      <div class="result-stats">
+        <div><strong id="correctCount">0</strong><span>Acertos</span></div>
+        <div><strong id="wrongCount">0</strong><span>Erros</span></div>
+        <div><strong id="hintCount">0</strong><span>Dicas</span></div>
+      </div>
+      <h3 class="review-title">Revise suas palavras</h3>
+      <p class="review-subtitle">Clique na estrela para favoritar as palavras que quer estudar depois.</p>
+      <div id="reviewList" class="review-list"></div>
+      <button id="restartButton" class="primary-button" type="button">Jogar novamente ↻</button>
+      <a href="sons.html" class="secondary-button">Revisar os sons</a>
+    </section>
+  </main>
+
+  <footer class="footer">~ Made with ♡ by Skylic ~</footer>
+
+  <div id="helpModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="modal-card">
+      <button id="closeHelp" class="close-button" type="button" aria-label="Fechar">×</button>
+      <h2 id="helpTitle">Como funciona?</h2>
+      <div class="help-section"><h3>Significado</h3><p>Leia o significado em português e escreva a palavra em inglês.</p></div>
+      <div class="help-section"><h3>Phonics</h3><p>Veja a palavra incompleta e seu significado. Digite somente as letras que faltam.</p></div>
+      <div class="help-section"><h3>Dica</h3><p>A dica mostra a pronúncia do som. Se acertar usando a dica, ganha 15 pontos em vez de 20.</p></div>
+      <div class="help-section"><h3>Pontuação</h3><p>Você ganha 20 pontos por acerto e perde 10 por erro. A pontuação nunca fica abaixo de zero. No final, você pode favoritar palavras para estudar depois.</p></div>
+      <button id="understoodButton" class="primary-button" type="button">Entendi!</button>
+    </div>
+  </div>
+  <script src="palavras.js"></script>
+  <script src="quiz.js"></script>
+</body>
 </html>
